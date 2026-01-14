@@ -1,10 +1,10 @@
 # Contao Config Boilerplate
 
-Dieses Verzeichnis enthält eine Basis-`config.yml` für Contao-Projekte.
+Dieses Verzeichnis enthält eine Basis-`config.yaml` für Contao-Projekte.
 
 ## Inhalt
 
-- `config.yml` - Standard Contao-Konfiguration mit:
+- `config.yaml` - Standard Contao-Konfiguration mit:
   - `adminEmail` aus `.env`
   - Standard-Datums-/Zeitformate
   - Bildgrößen & Limits

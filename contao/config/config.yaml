@@ -1,0 +1,23 @@
+# Contao configuration
+contao:
+  localconfig:
+    adminEmail: "%env(ADMIN_EMAIL)%"
+    dateFormat: "d.m.Y"
+    timeFormat: "H:i"
+    datimFormat: "d.m.Y H:i"
+    timeZone: "Europe/Berlin"
+    folderUrl: true
+    gdMaxImgHeight: 5000
+    gdMaxImgWidth: 5000
+    imageWidth: 1900
+    imageHeight: 1900
+    maxFileSize: 200485760
+
+    image:
+      imagine_options:
+        jpeg_quality: 80
+
+  mailer:
+    transports:
+      kontakt:
+        from: "%env(MAIL_USER)%"
