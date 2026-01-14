@@ -1,0 +1,48 @@
+//=======================================================================//
+// 00-utilities - 00-spacings - margin
+//=======================================================================//
+
+@use "sass:map";
+@use "directions";
+@use "breakpoint-factors";
+@use "../../settings/01-layout/breakpoints";
+@use "../../settings/01-layout/spacings";
+
+// Base margin utilities
+// Generates: .u-margin_sm, .u-margin_top_md, etc.
+.u-margin {
+  @each $spacingKey, $spacingValue in spacings.$spacings {
+    &_#{$spacingKey} {
+      margin: $spacingValue;
+    }
+
+    @each $dir in directions.$directions {
+      &_#{$dir}_#{$spacingKey} {
+        margin-#{$dir}: $spacingValue;
+      }
+    }
+  }
+}
+
+// Responsive margin - scales with breakpoint factors
+@each $breakpointKey, $breakpointValue in breakpoints.$breakpoints {
+  @media screen and (min-width: $breakpointValue) {
+    @each $spacingKey, $spacingValue in spacings.$spacings {
+      $factor: map.get(breakpoint-factors.$breakpoint-factors, $breakpointKey);
+
+      .u-margin_#{$spacingKey} {
+        margin: calc($spacingValue * $factor);
+      }
+
+      @each $dir in directions.$directions {
+        .u-margin_#{$dir}_#{$spacingKey} {
+          margin-#{$dir}: calc($spacingValue * $factor);
+        }
+      }
+    }
+  }
+}
+
+.u-no-margin {
+  margin: 0 !important;
+}

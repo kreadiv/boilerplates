@@ -1,0 +1,21 @@
+//=======================================================================//
+// 00-utilities - color
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+.u-c-white {
+  color: fn.color('white') !important;
+}
+
+.u-c-black {
+  color: fn.color('black') !important;
+}
+
+.u-bg-white {
+  background-color: fn.color('white') !important;
+}
+
+.u-bg-black {
+  background-color: fn.color('black') !important;
+}

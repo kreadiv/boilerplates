@@ -1,0 +1,16 @@
+//=======================================================================//
+// 00-utilities - 00-spacings
+//=======================================================================//
+
+// Responsive spacing utilities.
+// Spacings automatically scale up based on breakpoint factors.
+//
+// Usage:
+//   <div class="u-padding_md">       -> padding on all sides
+//   <div class="u-margin_top_lg">    -> margin-top only
+//   <div class="u-no-margin">        -> remove all margin
+
+@forward 'directions';
+@forward 'breakpoint-factors';
+@forward 'margins';
+@forward 'paddings';

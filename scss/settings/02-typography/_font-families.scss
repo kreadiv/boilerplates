@@ -1,0 +1,20 @@
+//=======================================================================//
+// settings - typography - font-families
+//=======================================================================//
+
+// Font stack definitions.
+// Access via: fn.font-family('text')
+
+// @formatter:off
+
+$font-families: (
+  'heading': (
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+  ),
+  'text': (
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+  ),
+  'mono': (
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace
+  ),
+);

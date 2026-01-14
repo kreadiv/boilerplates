@@ -1,0 +1,44 @@
+//=======================================================================//
+// 02-elements - list
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+ul, ol {
+  margin-bottom: fn.spacing('md');
+  padding-left: fn.spacing('lg');
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+li {
+  margin-bottom: fn.spacing('xs');
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Nested lists
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-bottom: 0;
+  margin-top: fn.spacing('xs');
+}
+
+dl {
+  margin-bottom: fn.spacing('md');
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: fn.spacing('sm');
+  margin-left: 0;
+}

@@ -1,0 +1,107 @@
+//=======================================================================//
+// 03-widgets - button
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+@use "../mixins/mixins" as mx;
+
+/**
+ * Button widget
+ *
+ * Usage:
+ *   <button class="w-btn w-btn_primary w-btn_md">Click me</button>
+ *
+ * Modifiers:
+ *   Sizes: w-btn_xs, w-btn_sm, w-btn_md, w-btn_lg
+ *   Variants: w-btn_primary, w-btn_secondary, w-btn_outlined, w-btn_ghost
+ */
+
+.w-btn {
+  @include mx.button-reset;
+  align-items: center;
+  border-radius: fn.border-radius('md');
+  display: inline-flex;
+  font-size: fn.font-size('sm');
+  font-weight: 600;
+  gap: fn.spacing('xs');
+  justify-content: center;
+  line-height: fn.line-height('tight');
+  text-decoration: none;
+  transition: fn.transition('fast');
+  user-select: none;
+  vertical-align: middle;
+
+  &:focus-visible {
+    @include mx.focus-ring(fn.color('primary', 500));
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    @include mx.disabled;
+  }
+
+  // Size modifiers
+  &_xs {
+    padding: fn.spacing('xs') fn.spacing('sm');
+  }
+
+  &_sm {
+    padding: fn.spacing('sm') fn.spacing('md');
+  }
+
+  &_md {
+    padding: fn.spacing('md') fn.spacing('lg');
+  }
+
+  &_lg {
+    padding: fn.spacing('lg') fn.spacing('xl');
+    font-size: fn.font-size('base');
+  }
+
+  // Variant: Primary (filled)
+  &_primary {
+    background-color: fn.color('primary', 600);
+    color: fn.color('white');
+
+    &:hover:not(:disabled) {
+      background-color: fn.color('primary', 700);
+    }
+  }
+
+  // Variant: Secondary (filled, neutral)
+  &_secondary {
+    background-color: fn.color('gray', 200);
+    color: fn.color('gray', 800);
+
+    &:hover:not(:disabled) {
+      background-color: fn.color('gray', 300);
+    }
+  }
+
+  // Variant: Outlined
+  &_outlined {
+    background-color: transparent;
+    border: 2px solid fn.color('primary', 600);
+    color: fn.color('primary', 600);
+
+    &:hover:not(:disabled) {
+      background-color: fn.color('primary', 50);
+    }
+  }
+
+  // Variant: Ghost (no background)
+  &_ghost {
+    background-color: transparent;
+    color: fn.color('primary', 600);
+
+    &:hover:not(:disabled) {
+      background-color: fn.color('primary', 50);
+    }
+  }
+
+  // Icon-only button
+  &_icon {
+    aspect-ratio: 1;
+    padding: fn.spacing('sm');
+  }
+}

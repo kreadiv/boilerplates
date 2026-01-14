@@ -1,0 +1,27 @@
+//=======================================================================//
+// 00-utilities - visibility
+//=======================================================================//
+
+@use "../mixins/mixins" as mx;
+
+// Screen reader only - visually hidden but accessible
+.u-sr-only {
+  @include mx.sr-only;
+}
+
+// Legacy alias for screen reader only
+.u-invisible {
+  @include mx.sr-only;
+}
+
+.u-visually-disabled {
+  @include mx.visually-disabled;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-visible {
+  visibility: visible !important;
+}

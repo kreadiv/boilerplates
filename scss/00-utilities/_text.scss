@@ -1,0 +1,57 @@
+//=======================================================================//
+// 00-utilities - text
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+.u-text-muted {
+  color: fn.color('gray', 500) !important;
+}
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.u-text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.u-text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.u-fw-normal {
+  font-weight: 400 !important;
+}
+
+.u-fw-medium {
+  font-weight: 500 !important;
+}
+
+.u-fw-bold {
+  font-weight: 700 !important;
+}
+
+.u-text-decoration-none {
+  text-decoration: none !important;
+}
+
+.u-text-decoration-underline {
+  text-decoration: underline !important;
+}
+
+.u-text-decoration-line-through {
+  text-decoration: line-through !important;
+}

@@ -1,0 +1,48 @@
+//=======================================================================//
+// 00-utilities - 00-spacings - padding
+//=======================================================================//
+
+@use "sass:map";
+@use "directions";
+@use "breakpoint-factors";
+@use "../../settings/01-layout/breakpoints";
+@use "../../settings/01-layout/spacings";
+
+// Base padding utilities
+// Generates: .u-padding_sm, .u-padding_top_md, etc.
+.u-padding {
+  @each $spacingKey, $spacingValue in spacings.$spacings {
+    &_#{$spacingKey} {
+      padding: $spacingValue;
+    }
+
+    @each $dir in directions.$directions {
+      &_#{$dir}_#{$spacingKey} {
+        padding-#{$dir}: $spacingValue;
+      }
+    }
+  }
+}
+
+// Responsive padding - scales with breakpoint factors
+@each $breakpointKey, $breakpointValue in breakpoints.$breakpoints {
+  @media screen and (min-width: $breakpointValue) {
+    @each $spacingKey, $spacingValue in spacings.$spacings {
+      $factor: map.get(breakpoint-factors.$breakpoint-factors, $breakpointKey);
+
+      .u-padding_#{$spacingKey} {
+        padding: calc($spacingValue * $factor);
+      }
+
+      @each $dir in directions.$directions {
+        .u-padding_#{$dir}_#{$spacingKey} {
+          padding-#{$dir}: calc($spacingValue * $factor);
+        }
+      }
+    }
+  }
+}
+
+.u-no-padding {
+  padding: 0 !important;
+}

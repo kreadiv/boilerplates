@@ -1,0 +1,57 @@
+/**
+ * ITCSS + BEM SCSS Framework
+ *
+ * Architecture based on Inverted Triangle CSS methodology.
+ * Styles flow from generic/low-specificity to specific/high-specificity.
+ *
+ * NAMING CONVENTIONS:
+ * - Utilities:  u-{property}_{value}     (e.g., u-margin_top_lg)
+ * - Widgets:    w-{name}                 (e.g., w-btn, w-icon)
+ * - Components: c-{name}                 (e.g., c-header, c-card)
+ * - Layouts:    l-{name}                 (e.g., l-container)
+ *
+ *
+ * CONTENTS
+ *
+ *
+ * 00-UTILITIES
+ * All utility classes are prefixed with "u-".
+ *
+ * Spacing .................. Spacings.
+ * Visibility ............... Visibility.
+ *
+ * 01-BASE
+ * Fonts .................... Project fonts.
+ * Normalize ................ Small browser reset. Base settings.
+ *
+ * 02-ELEMENTS
+ * Root ..................... Global variables, *, html, body css.
+ * Headlines ................ Headlines.
+ * Links .................... a-tags.
+ * Form ..................... Form elements.
+ * Lists .................... ul, ol, dl.
+ * Text ..................... p, small, etc.
+ *
+ * 03-WIDGETS
+ * Wigets are small and reusable like buttons e.g.
+ * All widget classes are prefixed with "w-" .
+ *
+ * 04-COMPONENTS
+ * Components are larger than widgets and can contain multiple widgets and other components.
+ * E.g. a navbar
+ * All component classes are prefixed with "c-" .
+ *
+ * 05-LAYOUTS
+ * All layout classes are prefixed with "l-" .
+ *
+ * 06-VENDOR
+ * Vendor styles.
+ */
+
+@use '00-utilities/__index' as utilities;
+@use '01-base/__index' as base;
+@use '02-elements/__index' as elements;
+@use '03-widgets/__index' as widgets;
+@use '04-components/__index' as components;
+@use '05-layouts/__index' as layouts;
+@use '06-vendor/__index' as vendor;

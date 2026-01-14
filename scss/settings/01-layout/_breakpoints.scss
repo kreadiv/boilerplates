@@ -1,0 +1,22 @@
+//=======================================================================//
+// settings - layout - breakpoints
+//=======================================================================//
+
+// Mobile-first breakpoints.
+// Access via: fn.breakpoint('md')
+
+// @formatter:off
+
+$breakpoint-screen-xs : 480px;
+$breakpoint-screen-sm : 768px;
+$breakpoint-screen-md : 992px;
+$breakpoint-screen-lg : 1200px;
+$breakpoint-screen-xl : 1440px;
+
+$breakpoints: (
+  'xs' : $breakpoint-screen-xs,
+  'sm' : $breakpoint-screen-sm,
+  'md' : $breakpoint-screen-md,
+  'lg' : $breakpoint-screen-lg,
+  'xl' : $breakpoint-screen-xl,
+);

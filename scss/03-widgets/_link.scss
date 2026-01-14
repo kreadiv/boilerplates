@@ -1,0 +1,41 @@
+//=======================================================================//
+// 03-widgets - link
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+/**
+ * Link widget - styled links beyond default <a> styling
+ *
+ * Usage:
+ *   <a href="#" class="w-link w-link_muted">Subtle link</a>
+ */
+
+.w-link {
+  color: fn.color('primary', 600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: fn.transition('fast');
+
+  &:hover {
+    color: fn.color('primary', 700);
+  }
+
+  // Muted variant
+  &_muted {
+    color: fn.color('gray', 500);
+
+    &:hover {
+      color: fn.color('gray', 700);
+    }
+  }
+
+  // No underline variant
+  &_plain {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

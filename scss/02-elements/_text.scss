@@ -1,0 +1,56 @@
+//=======================================================================//
+// 02-elements - text
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+p {
+  margin-bottom: fn.spacing('md');
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: fn.font-family('heading');
+  font-weight: 700;
+  line-height: fn.line-height('tight');
+  margin-bottom: fn.spacing('sm');
+}
+
+h1 {
+  font-size: fn.font-size('h1');
+}
+
+h2 {
+  font-size: fn.font-size('h2');
+}
+
+h3 {
+  font-size: fn.font-size('h3');
+}
+
+h4 {
+  font-size: fn.font-size('h4');
+}
+
+h5 {
+  font-size: fn.font-size('h5');
+}
+
+h6 {
+  font-size: fn.font-size('h6');
+}
+
+small {
+  font-size: fn.font-size('sm');
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}

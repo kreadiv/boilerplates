@@ -1,0 +1,61 @@
+//=======================================================================//
+// 02-elements - root
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+/**
+ * CSS Custom Properties
+ *
+ * Expose breakpoints as CSS variables for JavaScript access:
+ *
+ * ```js
+ * const breakpoint = getComputedStyle(document.documentElement)
+ *   .getPropertyValue('--breakpoint-md');
+ * ```
+ */
+
+:root {
+  --breakpoint-xs: #{fn.breakpoint('xs')};
+  --breakpoint-sm: #{fn.breakpoint('sm')};
+  --breakpoint-md: #{fn.breakpoint('md')};
+  --breakpoint-lg: #{fn.breakpoint('lg')};
+  --breakpoint-xl: #{fn.breakpoint('xl')};
+}
+
+/**
+ * Box sizing reset
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * HTML & Body
+ *
+ * 1. Prevent adjustments of font size after orientation changes in iOS.
+ * 2. 62.5% = 10px base for easy rem calculations (1rem = 10px)
+ */
+html {
+  font-size: 62.5%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 1 */
+  text-size-adjust: 100%; /* 1 */
+}
+
+body {
+  background-color: fn.color('white');
+  color: fn.color('gray', 900);
+  font-family: fn.font-family('text');
+  font-size: fn.font-size('base');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: fn.line-height('base');
+  text-rendering: optimizeLegibility;
+}

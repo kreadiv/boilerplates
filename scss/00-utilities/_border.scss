@@ -1,0 +1,15 @@
+//=======================================================================//
+// 00-utilities - border
+//=======================================================================//
+
+.u-border-0 {
+  border: 0 !important;
+}
+
+.u-rounded-none {
+  border-radius: 0 !important;
+}
+
+.u-rounded-full {
+  border-radius: 9999px !important;
+}

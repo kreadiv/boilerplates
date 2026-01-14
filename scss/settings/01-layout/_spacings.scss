@@ -1,0 +1,26 @@
+//=======================================================================//
+// settings - layout - spacings
+//=======================================================================//
+
+// Spacing scale based on 4px/0.4rem increments.
+// Access via: fn.spacing('md')
+
+// @formatter:off
+
+$spacing-xxs : .2rem;   // 2px
+$spacing-xs  : .4rem;   // 4px
+$spacing-sm  : .8rem;   // 8px
+$spacing-md  : 1.2rem;  // 12px
+$spacing-lg  : 2rem;    // 20px
+$spacing-xl  : 4rem;    // 40px
+$spacing-xxl : 6rem;    // 60px
+
+$spacings: (
+  'xxs' : $spacing-xxs,
+  'xs'  : $spacing-xs,
+  'sm'  : $spacing-sm,
+  'md'  : $spacing-md,
+  'lg'  : $spacing-lg,
+  'xl'  : $spacing-xl,
+  'xxl' : $spacing-xxl,
+);

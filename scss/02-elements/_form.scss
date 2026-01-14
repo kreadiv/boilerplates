@@ -1,0 +1,45 @@
+//=======================================================================//
+// 02-elements - form
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+// Inherit fonts for inputs
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// Remove default button styles
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+// Fieldset and legend
+fieldset {
+  border: 1px solid fn.color('gray', 300);
+  margin: 0;
+  padding: fn.spacing('md');
+}
+
+legend {
+  font-weight: 700;
+  padding: 0 fn.spacing('xs');
+}
+
+// Labels
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: fn.spacing('xs');
+}
+
+// Focus visible for all interactive elements
+:focus-visible {
+  outline: 2px solid fn.color('primary', 500);
+  outline-offset: 2px;
+}

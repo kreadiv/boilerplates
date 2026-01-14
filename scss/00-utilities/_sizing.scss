@@ -1,0 +1,32 @@
+//=======================================================================//
+// 00-utilities - sizing
+//=======================================================================//
+
+.u-w-auto {
+  width: auto !important;
+}
+
+.u-w-full {
+  width: 100% !important;
+}
+
+// Legacy alias
+.u-w-100 {
+  width: 100% !important;
+}
+
+.u-h-auto {
+  height: auto !important;
+}
+
+.u-h-full {
+  height: 100% !important;
+}
+
+.u-min-h-screen {
+  min-height: 100vh !important;
+}
+
+.u-max-w-full {
+  max-width: 100% !important;
+}

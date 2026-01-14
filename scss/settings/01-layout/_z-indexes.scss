@@ -1,0 +1,19 @@
+//=======================================================================//
+// settings - layout - z-indexes
+//=======================================================================//
+
+// Centralized z-index management.
+// Access via: fn.z-index('modal')
+
+// @formatter:off
+
+$z-indexes: (
+  'behind'     : -1,
+  'base'       : 1,
+  'dropdown'   : 100,
+  'sticky'     : 200,
+  'fixed'      : 300,
+  'overlay'    : 400,
+  'modal'      : 500,
+  'toast'      : 600,
+);

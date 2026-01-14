@@ -1,0 +1,91 @@
+//=======================================================================//
+// mixins
+//=======================================================================//
+
+@use "../settings/01-layout/breakpoints";
+
+// Visually reduce opacity to indicate disabled state
+@mixin visually-disabled {
+  opacity: 0.5;
+}
+
+// Full disabled state (visual + interaction)
+@mixin disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
+  @include visually-disabled;
+}
+
+// Set width and height with single value or separate values
+@mixin size($width, $height: $width) {
+  height: $height;
+  width: $width;
+}
+
+// Screen reader only - visually hidden but accessible
+@mixin sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// Media query shortcuts
+@mixin breakpoint-up($name) {
+  $value: map-get(breakpoints.$breakpoints, $name);
+  @media screen and (min-width: $value) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($name) {
+  $value: map-get(breakpoints.$breakpoints, $name);
+  @media screen and (max-width: $value - 1px) {
+    @content;
+  }
+}
+
+// Truncate text with ellipsis
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Truncate multiline text (webkit only)
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+// Focus ring for accessibility
+@mixin focus-ring($color: currentColor, $offset: 2px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+}
+
+// Reset button styles
+@mixin button-reset {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+// Reset list styles
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

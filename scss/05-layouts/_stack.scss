@@ -1,0 +1,40 @@
+//=======================================================================//
+// 05-layouts - stack
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+/**
+ * Stack layout
+ *
+ * Vertical spacing between child elements.
+ * Uses CSS gap for clean, collapsible spacing.
+ *
+ * Usage:
+ *   <div class="l-stack">
+ *     <div>Item 1</div>
+ *     <div>Item 2</div>
+ *   </div>
+ */
+
+.l-stack {
+  display: flex;
+  flex-direction: column;
+  gap: fn.spacing('md');
+
+  &_xs {
+    gap: fn.spacing('xs');
+  }
+
+  &_sm {
+    gap: fn.spacing('sm');
+  }
+
+  &_lg {
+    gap: fn.spacing('lg');
+  }
+
+  &_xl {
+    gap: fn.spacing('xl');
+  }
+}

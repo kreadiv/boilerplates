@@ -1,0 +1,38 @@
+//=======================================================================//
+// 05-layouts - container
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+/**
+ * Container layout
+ *
+ * Centers content with max-width and responsive padding.
+ *
+ * Usage:
+ *   <div class="l-container">...</div>
+ *   <div class="l-container l-container_narrow">...</div>
+ */
+
+.l-container {
+  box-sizing: content-box;
+  display: flow-root;
+  margin-inline: auto;
+  max-width: 1200px;
+  padding-inline: fn.spacing('md');
+
+  // Narrow variant for content-heavy pages
+  &_narrow {
+    max-width: 800px;
+  }
+
+  // Wide variant for full-width sections
+  &_wide {
+    max-width: 1400px;
+  }
+
+  // Full width (no max-width)
+  &_fluid {
+    max-width: none;
+  }
+}

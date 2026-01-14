@@ -1,0 +1,41 @@
+//=======================================================================//
+// 03-widgets - icon
+//=======================================================================//
+
+@use "../mixins/mixins" as mx;
+
+/**
+ * Icon widget
+ *
+ * Usage:
+ *   <svg class="w-icon w-icon_sm">...</svg>
+ *
+ * Sizes: w-icon_xs, w-icon_sm, w-icon_md, w-icon_lg
+ */
+
+.w-icon {
+  display: inline-block;
+  fill: currentColor;
+  flex-shrink: 0;
+  vertical-align: middle;
+
+  &_xs {
+    @include mx.size(1.2rem);
+  }
+
+  &_sm {
+    @include mx.size(1.6rem);
+  }
+
+  &_md {
+    @include mx.size(2rem);
+  }
+
+  &_lg {
+    @include mx.size(2.4rem);
+  }
+
+  &_xl {
+    @include mx.size(3.2rem);
+  }
+}

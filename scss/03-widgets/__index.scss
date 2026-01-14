@@ -1,0 +1,14 @@
+//=======================================================================//
+// 03-widgets - index
+//=======================================================================//
+
+/**
+ * Widgets are small, reusable UI components.
+ * All widget classes are prefixed with "w-".
+ *
+ * Examples: w-btn, w-icon, w-badge, w-avatar
+ */
+
+@forward 'button';
+@forward 'icon';
+@forward 'link';

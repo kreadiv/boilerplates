@@ -1,0 +1,86 @@
+//=======================================================================//
+// functions
+//=======================================================================//
+
+// Generic getter functions for all settings maps.
+// Provides type-safe access to design tokens.
+//
+// Usage:
+//   color: fn.color('primary', 500);
+//   padding: fn.spacing('md');
+//   font-size: fn.font-size('base');
+
+@use "sass:map";
+@use "../settings/00-colors/colors";
+@use "../settings/01-layout/borders";
+@use "../settings/01-layout/breakpoints";
+@use "../settings/01-layout/spacings";
+@use "../settings/01-layout/z-indexes";
+@use "../settings/02-typography/font-families";
+@use "../settings/02-typography/font-sizes";
+@use "../settings/02-typography/line-heights";
+@use "../settings/03-animations/animations";
+
+// Generic nested map getter
+// Supports any depth of nesting: get($map, 'key1', 'key2', ...)
+@function get($map, $keys...) {
+  @each $key in $keys {
+    $map: map.get($map, $key);
+  }
+
+  @return $map;
+}
+
+// Color getter - supports nested color scales
+// Example: color('primary', 500) or color('black')
+@function color($keys...) {
+  @return get(colors.$colors, $keys...);
+}
+
+// Border radius getter
+// Example: border-radius('md')
+@function border-radius($keys...) {
+  @return get(borders.$border-radius, $keys...);
+}
+
+// Breakpoint getter
+// Example: breakpoint('md')
+@function breakpoint($keys...) {
+  @return get(breakpoints.$breakpoints, $keys...);
+}
+
+// Spacing getter
+// Example: spacing('lg')
+@function spacing($keys...) {
+  @return get(spacings.$spacings, $keys...);
+}
+
+// Z-index getter
+// Example: z-index('modal')
+@function z-index($keys...) {
+  @return get(z-indexes.$z-indexes, $keys...);
+}
+
+// Font family getter
+// Example: font-family('text')
+@function font-family($keys...) {
+  @return get(font-families.$font-families, $keys...);
+}
+
+// Font size getter
+// Example: font-size('base') or font-size('h1')
+@function font-size($keys...) {
+  @return get(font-sizes.$font-sizes, $keys...);
+}
+
+// Line height getter
+// Example: line-height('base')
+@function line-height($keys...) {
+  @return get(line-heights.$line-heights, $keys...);
+}
+
+// Transition getter
+// Example: transition('fast')
+@function transition($keys...) {
+  @return get(animations.$transitions, $keys...);
+}

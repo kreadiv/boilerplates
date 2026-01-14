@@ -1,0 +1,14 @@
+//=======================================================================//
+// 00-utilities - 00-spacings - breakpoint-factors
+//=======================================================================//
+
+// Spacings automatically scale up at larger breakpoints.
+// This creates a fluid spacing system without multiple utility classes.
+
+$breakpoint-factors: (
+  'xs': 1.05,
+  'sm': 1.10,
+  'md': 1.15,
+  'lg': 1.20,
+  'xl': 1.20
+);

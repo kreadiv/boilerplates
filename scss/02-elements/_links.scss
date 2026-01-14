@@ -1,0 +1,21 @@
+//=======================================================================//
+// 02-elements - links
+//=======================================================================//
+
+@use "../functions/functions" as fn;
+
+a {
+  color: fn.color('primary', 600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: fn.transition('fast');
+
+  &:hover {
+    color: fn.color('primary', 700);
+  }
+
+  &:focus-visible {
+    outline: 2px solid fn.color('primary', 500);
+    outline-offset: 2px;
+  }
+}
