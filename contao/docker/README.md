@@ -31,6 +31,7 @@ Die `.env` kann als Basis dienen und bei Bedarf erweitert werden:
 ```
 APP_ENV=dev
 ADMIN_EMAIL="mail@kreadiv.de"
+MAIL_USER="mail@kreadiv.de"
 ```
 
 ### Ohne HTTPS

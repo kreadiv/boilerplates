@@ -22,6 +22,7 @@ Vollständiges Docker-Setup für Contao CMS mit:
 - MySQL 8.0
 - Alle benötigten PHP-Extensions (GD, Imagick, Intl, etc.)
 - Composer
+- .env Vorlage und Contao `config/config.yml`
 
 ```bash
 # Dateien kopieren
