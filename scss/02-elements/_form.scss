@@ -23,19 +23,19 @@ button {
 fieldset {
   border: 1px solid fn.color('gray', 300);
   margin: 0;
-  padding: fn.spacing('md');
+  padding: fn.spacing('3');
 }
 
 legend {
   font-weight: 700;
-  padding: 0 fn.spacing('xs');
+  padding: 0 fn.spacing('1');
 }
 
 // Labels
 label {
   display: block;
   font-weight: 500;
-  margin-bottom: fn.spacing('xs');
+  margin-bottom: fn.spacing('1');
 }
 
 // Focus visible for all interactive elements

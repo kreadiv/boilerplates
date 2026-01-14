@@ -20,21 +20,25 @@
 .l-stack {
   display: flex;
   flex-direction: column;
-  gap: fn.spacing('md');
+  gap: fn.spacing('3');
 
-  &_xs {
-    gap: fn.spacing('xs');
+  &_1 {
+    gap: fn.spacing('1');
   }
 
-  &_sm {
-    gap: fn.spacing('sm');
+  &_2 {
+    gap: fn.spacing('2');
   }
 
-  &_lg {
-    gap: fn.spacing('lg');
+  &_5 {
+    gap: fn.spacing('5');
   }
 
-  &_xl {
-    gap: fn.spacing('xl');
+  &_8 {
+    gap: fn.spacing('8');
+  }
+
+  &_10 {
+    gap: fn.spacing('10');
   }
 }

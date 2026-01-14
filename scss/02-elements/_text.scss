@@ -5,7 +5,7 @@
 @use "../functions/functions" as fn;
 
 p {
-  margin-bottom: fn.spacing('md');
+  margin-bottom: fn.spacing('3');
 
   &:last-child {
     margin-bottom: 0;
@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: fn.font-family('heading');
   font-weight: 700;
   line-height: fn.line-height('tight');
-  margin-bottom: fn.spacing('sm');
+  margin-bottom: fn.spacing('2');
 }
 
 h1 {

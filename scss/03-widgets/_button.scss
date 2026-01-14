@@ -23,7 +23,7 @@
   display: inline-flex;
   font-size: fn.font-size('sm');
   font-weight: 600;
-  gap: fn.spacing('xs');
+  gap: fn.spacing('1');
   justify-content: center;
   line-height: fn.line-height('tight');
   text-decoration: none;
@@ -42,19 +42,19 @@
 
   // Size modifiers
   &_xs {
-    padding: fn.spacing('xs') fn.spacing('sm');
+    padding: fn.spacing('1') fn.spacing('2');
   }
 
   &_sm {
-    padding: fn.spacing('sm') fn.spacing('md');
+    padding: fn.spacing('2') fn.spacing('3');
   }
 
   &_md {
-    padding: fn.spacing('md') fn.spacing('lg');
+    padding: fn.spacing('3') fn.spacing('5');
   }
 
   &_lg {
-    padding: fn.spacing('lg') fn.spacing('xl');
+    padding: fn.spacing('5') fn.spacing('10');
     font-size: fn.font-size('base');
   }
 
@@ -102,6 +102,6 @@
   // Icon-only button
   &_icon {
     aspect-ratio: 1;
-    padding: fn.spacing('sm');
+    padding: fn.spacing('2');
   }
 }

@@ -23,7 +23,7 @@ mixins/        Reusable SCSS mixins
 
 | Layer       | Prefix | Example                     |
 |-------------|--------|-----------------------------|
-| Utilities   | `u-`   | `u-margin_top_lg`           |
+| Utilities   | `u-`   | `u-margin_top_5`            |
 | Widgets     | `w-`   | `w-btn`, `w-btn_primary`    |
 | Components  | `c-`   | `c-header`, `c-card`        |
 | Layouts     | `l-`   | `l-container`, `l-stack`    |
@@ -39,7 +39,7 @@ Access all design tokens via functions:
 
 .example {
   color: fn.color('primary', 500);
-  padding: fn.spacing('md');
+  padding: fn.spacing('3');
   font-size: fn.font-size('base');
   font-family: fn.font-family('text');
   line-height: fn.line-height('base');
@@ -51,27 +51,38 @@ Access all design tokens via functions:
 
 ## Spacing System
 
-Spacings automatically scale up at larger breakpoints via `$breakpoint-factors`:
+Numerische Skala basierend auf 4px (0.4rem) Inkrementen:
 
 ```scss
-// 00-utilities/00-spacings/_breakpoint-factors.scss
-$breakpoint-factors: (
-  'xs': 1.05,
-  'sm': 1.10,
-  'md': 1.15,
-  'lg': 1.20,
-  'xl': 1.20
+$spacings: (
+  '0'   : 0,
+  '1'   : .4rem,   // 4px
+  '2'   : .8rem,   // 8px
+  '3'   : 1.2rem,  // 12px
+  '4'   : 1.6rem,  // 16px
+  '5'   : 2rem,    // 20px
+  '6'   : 2.4rem,  // 24px
+  '8'   : 3.2rem,  // 32px
+  '10'  : 4rem,    // 40px
+  '12'  : 4.8rem,  // 48px
+  '16'  : 6.4rem,  // 64px
+  '20'  : 8rem,    // 80px
+  '24'  : 9.6rem,  // 96px
 );
+
+// Verwendung:
+padding: fn.spacing('3');   // 1.2rem
+gap: fn.spacing('8');       // 3.2rem
 ```
 
-This creates a fluid spacing system without needing responsive utility classes.
+Spacings skalieren automatisch bei größeren Breakpoints via `$breakpoint-factors`.
 
 ## Utility Classes
 
 ### Spacing
 ```html
-<div class="u-padding_md">           <!-- padding on all sides -->
-<div class="u-margin_top_lg">        <!-- margin-top only -->
+<div class="u-padding_3">            <!-- padding on all sides -->
+<div class="u-margin_top_5">         <!-- margin-top only -->
 <div class="u-no-margin">            <!-- remove margin -->
 ```
 
@@ -115,7 +126,7 @@ Small, reusable UI components:
 <div class="l-container l-container_narrow">Max 800px</div>
 
 <!-- Stack (vertical spacing) -->
-<div class="l-stack l-stack_lg">
+<div class="l-stack l-stack_5">
   <div>Item 1</div>
   <div>Item 2</div>
 </div>
