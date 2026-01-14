@@ -24,6 +24,15 @@ Ersetze diese Platzhalter in `docker-compose.yml`:
 
 ## Schnellstart
 
+### .env Datei
+
+Die `.env` kann als Basis dienen und bei Bedarf erweitert werden:
+
+```
+APP_ENV=dev
+ADMIN_EMAIL="mail@kreadiv.de"
+```
+
 ### Ohne HTTPS
 
 ```bash
