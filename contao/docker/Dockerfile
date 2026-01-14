@@ -58,11 +58,13 @@ RUN { \
     echo 'date.timezone=Europe/Berlin'; \
     } > /usr/local/etc/php/conf.d/99-custom.ini
 
-# Apache Module aktivieren
-RUN a2enmod rewrite
+# Apache Module aktivieren (inkl. SSL)
+RUN a2enmod rewrite ssl
 
-# Apache Konfiguration kopieren
+# Apache Konfigurationen kopieren
 COPY ./apache-config.conf /etc/apache2/sites-available/000-default.conf
+COPY ./apache-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+RUN a2ensite default-ssl
 
 # Webinhalte kopieren
 COPY . /var/www/html
@@ -71,7 +73,7 @@ COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
 # Ports freigeben
-EXPOSE 80
+EXPOSE 80 443
 
 # Startbefehle für Apache
 CMD ["apache2-foreground"]

@@ -1,12 +1,14 @@
 # Contao Docker Setup (PHP 8.5)
 
-Docker-Konfiguration für Contao CMS 5.x mit PHP 8.5, Apache und MySQL 8.0.
+Docker-Konfiguration für Contao CMS 5.x mit PHP 8.5, Apache, MySQL 8.0 und optionalem HTTPS via mkcert.
 
 ## Dateien
 
 - `Dockerfile` - PHP 8.5-Apache Container mit allen Contao-Abhängigkeiten
 - `docker-compose.yml` - Service-Orchestrierung (Web + Datenbank)
-- `apache-config.conf` - Apache VirtualHost Konfiguration
+- `apache-config.conf` - Apache VirtualHost Konfiguration (HTTP)
+- `apache-ssl.conf` - Apache VirtualHost Konfiguration (HTTPS)
+- `setup-ssl.sh` - Script zum Erstellen der SSL-Zertifikate
 
 ## Platzhalter
 
@@ -15,9 +17,39 @@ Ersetze diese Platzhalter in `docker-compose.yml`:
 | Platzhalter        | Beschreibung                               | Beispiel            |
 | ------------------ | ------------------------------------------ | ------------------- |
 | `{{PROJECT_NAME}}` | Projektname (lowercase, keine Leerzeichen) | `meinprojekt`       |
-| `{{WEB_PORT}}`     | Lokaler Port für Webserver                 | `8080`              |
+| `{{WEB_PORT}}`     | Lokaler Port für HTTP                      | `8080`              |
+| `{{SSL_PORT}}`     | Lokaler Port für HTTPS                     | `8443`              |
 | `{{DB_PORT}}`      | Lokaler Port für Datenbank                 | `3306`              |
 | `{{DB_PASSWORD}}`  | Datenbank-Passwort                         | `sicheres_passwort` |
+
+## Schnellstart
+
+### Ohne HTTPS
+
+```bash
+# Platzhalter ersetzen und starten
+docker compose build
+docker compose up -d
+
+# Aufrufen: http://localhost:{{WEB_PORT}}
+```
+
+### Mit HTTPS (mkcert)
+
+```bash
+# 1. mkcert installieren (einmalig)
+brew install mkcert
+mkcert -install
+
+# 2. Zertifikate erstellen
+./setup-ssl.sh
+
+# 3. Container starten
+docker compose build
+docker compose up -d
+
+# Aufrufen: https://localhost:{{SSL_PORT}}
+```
 
 ## PHP Extensions
 
@@ -45,15 +77,14 @@ Ersetze diese Platzhalter in `docker-compose.yml`:
 - Max Execution Time: 120s
 - Timezone: Europe/Berlin
 
-## Verwendung
+## SSL-Zertifikate
 
-1. Dateien ins Projektverzeichnis kopieren
-2. Platzhalter in `docker-compose.yml` ersetzen
-3. Container starten:
+Die Zertifikate werden mit [mkcert](https://github.com/FiloSottile/mkcert) erstellt. Diese sind lokal vertrauenswürdig - keine Browser-Warnungen!
 
-```bash
-docker compose build
-docker compose up -d
+```
+certs/
+├── localhost.pem       # Zertifikat
+└── localhost-key.pem   # Private Key
 ```
 
-4. Contao Manager aufrufen: `http://localhost:{{WEB_PORT}}/contao-manager.phar.php`
+**Wichtig:** Der `certs/` Ordner sollte in `.gitignore` aufgenommen werden.
